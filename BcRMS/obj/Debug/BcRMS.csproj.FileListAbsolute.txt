@@ -1,0 +1,4 @@
+D:\dinesh\RMS\BcRMS\BcRMS\bin\BcRMS.dll
+D:\dinesh\RMS\BcRMS\BcRMS\bin\BcRMS.pdb
+D:\dinesh\RMS\BcRMS\BcRMS\obj\Debug\BcRMS.dll
+D:\dinesh\RMS\BcRMS\BcRMS\obj\Debug\BcRMS.pdb
