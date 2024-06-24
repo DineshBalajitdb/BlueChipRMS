@@ -30,19 +30,37 @@
             </div>
                
         </div>          
+        
         <br />
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+            SelectMethod="GetAllCategory" TypeName="BcRMS.CategoryListDataAccessLayer">
+        </asp:ObjectDataSource>
+        <br />
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+            SelectMethod="GetAllFoodMenuItem" TypeName="BcRMS.FoodListDataAccessLayer">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList1" Name="CategoryId" 
+                    PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
+       <div class ="select "style="margin-left: 280px">        
+            &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
+            DataSourceID="ObjectDataSource1" DataTextField="CategoryName" 
+            DataValueField="CategoryId">
+            </asp:DropDownList>
+        </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" 
             CellPadding="5" ForeColor="Black" 
             GridLines="None" 
             HorizontalAlign="Center" Width="999px" 
-            AllowSorting="True" onsorting="GridView1_Sorting" onsorted="Page_Load" 
-            ViewStateMode="Enabled" >
+            AllowSorting="True" onsorted="Page_Load" 
+            ViewStateMode="Enabled" DataSourceID="ObjectDataSource2" >
             <AlternatingRowStyle BackColor="PaleGoldenrod" BorderStyle="Ridge" />
             <Columns>
-                <asp:BoundField DataField="CategoryId" HeaderText="Category Id" SortExpression="CategoryId" />
-                <asp:BoundField DataField="itemName" HeaderText="Item Name" SortExpression="itemName" />
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}"/>
+                <asp:BoundField DataField="CategoryId" HeaderText="Category Id"  />
+                <asp:BoundField DataField="itemName" HeaderText="Item Name" />
+                <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:c}"/>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
                         <asp:Image ID="Image1" runat="server" Height="100px" Width="106px" ImageAlign="Middle" 

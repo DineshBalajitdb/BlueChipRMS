@@ -41,7 +41,7 @@ namespace BcRMS
                 {
                     Session["UserName"] = dsUser.Tables[0].Rows[0]["username"].ToString();
                     Session["MobileNo"] = dsUser.Tables[0].Rows[0]["mobilenumber"].ToString();
-                    Response.Redirect("~/UserPage.aspx");
+                    Response.Redirect("~/menu.aspx");
                 }
                 else
                 {

@@ -50,18 +50,41 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="breakfast.aspx" />
+    <Content Include="cart.aspx" />
     <Content Include="Css\Loginpage.css" />
     <Content Include="Css\Registrationpage.css" />
+    <Content Include="drinks.aspx" />
     <Content Include="FMAlterItem.aspx" />
     <Content Include="FoodManagement.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Css\HomePage.css" />
     <Content Include="FMInsertFoodItems.aspx" />
     <Content Include="Loginpage.aspx" />
+    <Content Include="meal.aspx" />
+    <Content Include="menu.aspx" />
     <Content Include="Registrationpage.aspx" />
     <Content Include="sources\Bodybackground.png" />
     <Content Include="FMViewItem.aspx" />
     <Content Include="sources\cancel.png" />
+    <Content Include="sources\FoodItem\BreakFast\Bread Toast.jpg" />
+    <Content Include="sources\FoodItem\BreakFast\dosa.jpg" />
+    <Content Include="sources\FoodItem\BreakFast\idli.jpg" />
+    <Content Include="sources\FoodItem\BreakFast\puri.jpg" />
+    <Content Include="sources\FoodItem\BreakFast\tea.jpg" />
+    <Content Include="sources\FoodItem\Drinks\choc.jpg" />
+    <Content Include="sources\FoodItem\Drinks\faluda.jpg" />
+    <Content Include="sources\FoodItem\Drinks\lassi.jpg" />
+    <Content Include="sources\FoodItem\Drinks\lemon juice.jpg" />
+    <Content Include="sources\FoodItem\Drinks\Limbu.jpg" />
+    <Content Include="sources\FoodItem\Drinks\Menu.png" />
+    <Content Include="sources\FoodItem\Drinks\orange juice.jpg" />
+    <Content Include="sources\FoodItem\Drinks\Strawberry cocktail drinks.jpg" />
+    <Content Include="sources\FoodItem\Meals\biryani.jpg" />
+    <Content Include="sources\FoodItem\Meals\meals.jpg" />
+    <Content Include="sources\FoodItem\Meals\north.jpg" />
+    <Content Include="sources\FoodItem\Meals\punjabi.jpg" />
+    <Content Include="sources\FoodItem\Meals\south.jpg" />
     <Content Include="sources\insert-picture-icon.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -72,6 +95,28 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="breakfast.aspx.cs">
+      <DependentUpon>breakfast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="breakfast.aspx.designer.cs">
+      <DependentUpon>breakfast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryListDataAccessLayer.cs" />
+    <Compile Include="drinks.aspx.cs">
+      <DependentUpon>drinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="drinks.aspx.designer.cs">
+      <DependentUpon>drinks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FMAlterItem.aspx.cs">
       <DependentUpon>FMAlterItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +152,20 @@
     </Compile>
     <Compile Include="Loginpage.aspx.designer.cs">
       <DependentUpon>Loginpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="meal.aspx.cs">
+      <DependentUpon>meal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="meal.aspx.designer.cs">
+      <DependentUpon>meal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrationpage.aspx.cs">
