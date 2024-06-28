@@ -31,6 +31,7 @@ namespace BcRMS
                     {
 
                         FoodMenuCategory FoodMenuCategory = new FoodMenuCategory();
+
                         FoodMenuCategory.CategoryId = Convert.ToInt32(rdr["CategoryId"]);
                         FoodMenuCategory.CategoryName = rdr["CategoryName"].ToString();
 

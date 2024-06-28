@@ -19,8 +19,6 @@
 <a href="cart.aspx">Cart</a>
 <br />
 </div>
- 
-
 </form>
 </body>
 </html>

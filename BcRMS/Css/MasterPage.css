@@ -1,0 +1,28 @@
+﻿ 
+        body
+        {
+            background-image: url('../sources/Bodybackground.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .menu {
+           
+            overflow: hidden;
+        }
+        .menu a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+             border-radius: 5px;
+        }
+        .menu a:hover {
+            background-color: #111;
+        }
+  

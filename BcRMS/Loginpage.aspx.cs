@@ -33,7 +33,7 @@ namespace BcRMS
             DataSet dsUser = AuthenticateUser(username,EncrPassword,loginType);
             if (loginType == 0)
             {
-                Response.Redirect("~/HomePage.aspx");
+                Response.Redirect("~/AdminPage.aspx");
             }
             else
             {

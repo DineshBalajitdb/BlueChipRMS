@@ -1,76 +1,87 @@
-﻿             body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f5f5f5;
-            }
- 
-            .header {
-                background-color: #D62828;
-                color: #fff;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
- 
-            .header h1 {
-                margin: 0;
-                font-size: 28px;
-            }
- 
-            .menu {
-                background-color: #fff;
-                padding: 10px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
- 
-            .menu a {
-                display: inline-block;
-                padding: 10px 20px;
-                text-decoration: none;
-                color: #003366;
-                transition: background-color 0.3s ease;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
- 
-            .menu a:hover {
-                background-color: #003366;
-                color: #fff;
-            }
- 
-            .content {
-                padding: 20px;
-            }
- 
-            .welcome {
-                background-color: #D62828;
-                color: #fff;
-                padding: 5px;
-                border-radius: 5px;
-                text-align: center;
- 
+﻿body
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
 
-            }
- 
-            .logo {
-                text-align: center;
-                margin-top: 50px;
-            }
-            footer {
-                background-color: #D62828;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-            }
-            body {
-                background-image: url('../sources/Bodybackground.png');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-            }
-            select {
+.header
+{
+    background-color: #D62828;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1
+{
+    margin: 0;
+    font-size: 28px;
+}
+
+.menu
+{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu a
+{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #003366;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.menu a:hover
+{
+    background-color: #003366;
+    color: #fff;
+}
+
+.content
+{
+    padding: 20px;
+}
+
+.welcome
+{
+    background-color: #D62828;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.logo
+{
+    text-align: center;
+    margin-top: 50px;
+}
+footer
+{
+    background-color: #D62828;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+body
+{
+    background-image: url('../sources/Bodybackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+select
+{
     width: 200px;
     padding: 5px;
     font-size: 14px;
@@ -79,17 +90,48 @@
     color: #333;
 }
 
-select:hover {
+select:hover
+{
     border-color: #888;
 }
 
-select:focus {
+select:focus
+{
     outline: none;
     border-color: #0066cc;
 }
 
 /* Optional: style for disabled state */
-select:disabled {
+select:disabled
+{
     background-color: #eee;
     color: #999;
+}
+.content
+{
+    padding:20px;
+}
+.Body
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+    }
+    
+.GridViews
+{ 
+   display: flex;
+  height: 100vh;
+}
+.GridViews1 
+{
+   flex: 1;
+  padding: 20px;
+  overflow-y: auto;   
+}
+.GridViews2
+{
+    flex: 1;
+  padding: 20px;
+  overflow-y: auto;   
 }

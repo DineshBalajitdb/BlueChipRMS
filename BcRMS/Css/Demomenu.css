@@ -1,0 +1,110 @@
+﻿.product-item {
+    display: inline-block;
+    width: 300px; /* Adjust as needed */
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top; /* Ensures items align properly */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.product-image {
+    text-align: center; /* Centers the image */
+}
+
+.product-details {
+    padding: 10px;
+}
+
+.btn-buy,
+.btn-cart {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.menu
+{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.content
+{
+    padding: 20px;
+}
+.welcome
+{
+    background-color: #D62828;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.menu a
+{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #003366;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+body
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header
+{
+    background-color: #D62828;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1
+{
+    margin: 0;
+    font-size: 28px;
+}
+
+.menu
+{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.row
+{
+    display: inline;
+    margin-bottom: 20px;
+    float: left;
+    margin-right: 60px;
+}
+ 
+ 
+.row > .product-image
+{
+    margin-right: 80px;
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
+ 
+ 
+.row > .product-image:nth-child(3n)
+{
+    margin-right: 0;
+}
+.orh2
+{
+    text-align: center;
+    margin-top: 40px;
+}

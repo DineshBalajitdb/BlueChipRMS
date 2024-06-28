@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.IO;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 namespace BcRMS
 {
     public class FoodMenu
@@ -23,7 +18,7 @@ namespace BcRMS
     }
     public class FoodListDataAccessLayer
     {
-        public static List<FoodMenu> GetAllFoodMenuItem(int FoodItemId)
+        public static List<FoodMenu> GetAllFoodMenuItem(int CategoryId)
         {
             List<FoodMenu> listFoodMenu = new List<FoodMenu>();
             string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -32,7 +27,47 @@ namespace BcRMS
 
                 SqlCommand cmd = new SqlCommand("spGetFoodMenuByCategoryId", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter Parameter = new SqlParameter("@spGetFoodMenuByFoodItemId", FoodItemId);
+                SqlParameter Parameter = new SqlParameter("@CategoryId", CategoryId);
+                cmd.Parameters.Add(Parameter);
+                con.Open();
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+
+                        FoodMenu FoodMenu = new FoodMenu();
+                        FoodMenu.FoodItemID = Convert.ToInt32(rdr["FoodItemID"]);
+                        FoodMenu.CategoryId = Convert.ToInt32(rdr["CategoryId"]);
+                        FoodMenu.CategoryName = rdr["CategoryName"].ToString();
+                        FoodMenu.ItemName = rdr["ItemName"].ToString();
+                        FoodMenu.Price = Convert.ToDecimal(rdr["Price"]);
+                        FoodMenu.ImageData = (byte[])rdr["ImageData"];
+                        if (FoodMenu.ImageData != null && FoodMenu.ImageData.Length > 0)
+                        {
+                            FoodMenu.ImageDataBase64 = "data:image/jpeg;base64," + Convert.ToBase64String(FoodMenu.ImageData);
+                        }
+                        else
+                        {
+                            FoodMenu.ImageDataBase64 = ""; // or set to a default image URL
+                        }
+
+                        listFoodMenu.Add(FoodMenu);
+                    }
+                }
+
+            }
+            return listFoodMenu;
+        }
+        public static List<FoodMenu> GetAllFoodMenuItembyFooditemId(int FoodItemID)
+        {
+            List<FoodMenu> listFoodMenu = new List<FoodMenu>();
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                SqlCommand cmd = new SqlCommand("spGetFoodMenuByFoodItemId", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter Parameter = new SqlParameter("@FoodItemId", FoodItemID);
                 cmd.Parameters.Add(Parameter);
                 con.Open();
                 using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -71,7 +106,7 @@ namespace BcRMS
             {
 
                 SqlCommand cmd = new SqlCommand("spGetBasicFoodMenu", con);
-                cmd.CommandType = CommandType.StoredProcedure;             
+                cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
@@ -100,8 +135,10 @@ namespace BcRMS
             }
             return BasiclistFoodMenu;
         }
-        public static void InsertItem(int CategoryId ,string ItemName, decimal Price,byte ImageData)
+
+        public static void InsertItem(int categoryId, string itemName, decimal price, byte[] bytes)
         {
+
             string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -112,23 +149,23 @@ namespace BcRMS
 
                 SqlParameter parameter_CategoryId = new SqlParameter();
                 parameter_CategoryId.ParameterName = "@CategoryId";
-                parameter_CategoryId.Value = CategoryId;
+                parameter_CategoryId.Value = categoryId;
                 cmd.Parameters.Add(parameter_CategoryId);
 
 
                 SqlParameter parameter_ItemName = new SqlParameter();
                 parameter_ItemName.ParameterName = "@ItemName";
-                parameter_ItemName.Value = ItemName;
+                parameter_ItemName.Value = itemName;
                 cmd.Parameters.Add(parameter_ItemName);
 
                 SqlParameter parameter_Price = new SqlParameter();
                 parameter_Price.ParameterName = "@Price";
-                parameter_Price.Value = ItemName;
+                parameter_Price.Value = price;
                 cmd.Parameters.Add(parameter_Price);
 
                 SqlParameter parameter_Image = new SqlParameter();
                 parameter_Image.ParameterName = "@ImageData";
-                parameter_Image.Value = ImageData;
+                parameter_Image.Value = bytes;
                 cmd.Parameters.Add(parameter_Image);
 
                 #endregion
@@ -136,16 +173,23 @@ namespace BcRMS
                 cmd.ExecuteNonQuery();
 
 
+
             }
         }
 
-        public static void UpdateItem(int FoodItemId,int CategoryId, string ItemName, decimal Price, byte ImageData)
+        public static void UpdateItem(int FoodItemId, int CategoryId, string ItemName, decimal Price, byte[] bytes)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                string UpdateQuery = "UPDATE tbl_FoodMenus set CategoryId=@CategoryId,"+
-                    "ItemName=@ItemName,Price=@Price,ImageData=@ImageData Where FoodItemId=@FoodItemId ";
+                string UpdateQuery = "UPDATE tbl_FoodMenus set CategoryId=@CategoryId,ItemName=@ItemName,Price=@Price";
+                if (bytes != null)
+                {
+                    UpdateQuery += ", ImageData = @ImageData";
+                }
+
+                UpdateQuery += " WHERE FoodItemId = @FoodItemId";
+               
                 SqlCommand cmd = new SqlCommand(UpdateQuery, con);
 
                 #region parameters
@@ -168,14 +212,16 @@ namespace BcRMS
 
                 SqlParameter parameter_Price = new SqlParameter();
                 parameter_Price.ParameterName = "@Price";
-                parameter_Price.Value = ItemName;
+                parameter_Price.Value = Price;
                 cmd.Parameters.Add(parameter_Price);
 
-                SqlParameter parameter_Image = new SqlParameter();
-                parameter_Image.ParameterName = "@ImageData";
-                parameter_Image.Value = ImageData;
-                cmd.Parameters.Add(parameter_Image);
-
+                if (bytes != null)
+                {
+                    SqlParameter parameter_Image = new SqlParameter();
+                    parameter_Image.ParameterName = "@ImageData";
+                    parameter_Image.Value = bytes;
+                    cmd.Parameters.Add(parameter_Image);
+                }
                 #endregion
                 con.Open();
                 cmd.ExecuteNonQuery();

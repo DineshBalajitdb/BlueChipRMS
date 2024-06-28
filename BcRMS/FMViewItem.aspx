@@ -22,7 +22,6 @@
             <a href="HomePage.aspx">Home Page</a>
             <a href="FMInsertFoodItems.aspx">Add Item</a>
             <a href="FMViewItem.aspx">View Item</a>
-            <a href="FMAlterItem.aspx">Alter Item</a>
         </div>
         <div class="content">
             <div class="welcome">
