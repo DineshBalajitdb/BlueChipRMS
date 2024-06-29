@@ -13,25 +13,53 @@ namespace BcRMS
         {
             if (!IsPostBack)
             {
-                BindMenuItems(0); // 0 for all categories
+                 DisplayUserId();
+                
+            }
+               
+       }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (ViewState["SelectedCategory"] != null)
+            {
+                int selectedCategory = (int)ViewState["SelectedCategory"];
+                BindMenuItems(selectedCategory);
             }
         }
-        protected void ddlCategories_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedCategory = int.Parse(ddlCategories.SelectedValue);
-            BindMenuItems(selectedCategory);
-        }
-
+        
         private void BindMenuItems(int categoryId)
         {
             List<MenuItem> menuItems = MenuDataAccessLayer.GetMenuItemByCategory(categoryId);
             Repeater1.DataSource = menuItems;
             Repeater1.DataBind();
         }
-     
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedCategory = int.Parse(DropDownList1.SelectedValue);
+            ViewState["SelectedCategory"] = selectedCategory;
+            //BindMenuItems(selectedCategory);
+
+        }
+        //protected void ddlCategories_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int selectedCategory = int.Parse(ddlCategories.SelectedValue);
+        //        ViewState["SelectedCategory"] = selectedCategory;
+        //        BindMenuItems(selectedCategory);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine("Exception in ddlCategories_SelectedIndexChanged: " + ex.Message);
+        //        // Handle parsing exception if necessary
+        //        // Example: LogError(ex);
+        //    }
+        //}
+        
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "Buy")
+            if (e.CommandName == "Order")
             {
                 int foodItemId = Convert.ToInt32(e.CommandArgument);
                 // Perform action based on the Buy command
@@ -39,48 +67,72 @@ namespace BcRMS
             else if (e.CommandName == "cart")
             {
                 int foodItemId = Convert.ToInt32(e.CommandArgument);
+                AddItemToCart(foodItemId);
                 // Perform action based on the cart command
             }
-
             // Optionally, rebind data after command execution
-            BindMenuItems(int.Parse(ddlCategories.SelectedValue));
+            //BindMenuItems((int)ViewState["SelectedCategory"]);
         }
         protected string GetBase64Image(object dataItem)
         {
             try
             {
-                if (dataItem == null)
-                {
-                    // Handle null dataItem
-                    return ""; // or return a default image URL
-                }
-
+                if (dataItem == null) return "";
                 MenuItem menuItem = dataItem as MenuItem;
-                if (menuItem == null)
-                {
-                    // Handle case where dataItem is not a MenuItem
-                    return ""; // or return a default image URL
-                }
-
-                if (menuItem.ImageData == null || menuItem.ImageData.Length == 0)
-                {
-                    // Handle the case where ImageData is null or empty
-                    return ""; // or return a default image URL
-                }
-
-                // Convert byte array (ImageData) to base64 string
-                string base64String = "data:image/jpeg;base64," + Convert.ToBase64String(menuItem.ImageData);
-                return base64String;
+                if (menuItem == null || menuItem.ImageData == null || menuItem.ImageData.Length == 0) return "";
+                return "data:image/jpeg;base64," + Convert.ToBase64String(menuItem.ImageData);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Log the exception (using your logging mechanism)
-                // Example: Logger.LogError("Error in GetBase64Image: " + ex.Message);
-
-                // Optionally, return a default image URL or an empty string
-                return ""; // or return a default image URL
+                return ""; // Optionally log the error
             }
         }
+        private void DisplayUserId()
+        {
+            if (Session["UserName"] != null)
+            {
+                string userId = Session["UserName"].ToString();
+                lblUserId.Text = "User ID: " + userId;
+            }
+        }
+        
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+                
+            Session.Clear();
+            Response.Redirect("~/Loginpage.aspx");
+        }
+        private void AddItemToCart(int foodItemId)
+        {
+            // Retrieve or initialize the cart items
+            List<MenuItem> cartItems = Session["CartItems"] as List<MenuItem>;
+            if (cartItems == null)
+            {
+                cartItems = new List<MenuItem>();
+            }
+
+            // Retrieve the selected menu item from database or session
+            MenuItem menuItem = MenuDataAccessLayer.GetMenuItemByFoodId(foodItemId);
+
+            // Add the selected menu item to the cart
+            if (menuItem != null)
+            {
+                cartItems.Add(menuItem);
+
+                // Store the updated cart items back in session
+                Session["CartItems"] = cartItems;
+            }
+
+            // Optionally, you can redirect to a cart page or update UI to reflect item added to cart
+            Response.Redirect("~/CartPage.aspx");
+        }
+
+
+
+       
+
+        
+
 
     }
 }

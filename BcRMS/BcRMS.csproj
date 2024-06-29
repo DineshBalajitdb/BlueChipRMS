@@ -53,7 +53,8 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="breakfast.aspx" />
     <Content Include="BreakFastpage.aspx" />
-    <Content Include="cart.aspx" />
+    <Content Include="CartPage.aspx" />
+    <Content Include="Css\Cart.css" />
     <Content Include="Css\Demomenu.css" />
     <Content Include="Css\Loginpage.css" />
     <Content Include="Css\Registrationpage.css" />
@@ -67,9 +68,7 @@
     <Content Include="FMInsertFoodItems.aspx" />
     <Content Include="Loginpage.aspx" />
     <Content Include="Css\MasterPage.css" />
-    <Content Include="meal.aspx" />
     <Content Include="MealPage.aspx" />
-    <Content Include="menu.aspx" />
     <Content Include="OrderManagement.aspx" />
     <Content Include="Registrationpage.aspx" />
     <Content Include="sources\Bodybackground.png" />
@@ -124,12 +123,12 @@
     <Compile Include="BreakFastpage.aspx.designer.cs">
       <DependentUpon>BreakFastpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="cart.aspx.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cart.aspx.designer.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="CategoryListDataAccessLayer.cs" />
     <Compile Include="demomenu.aspx.cs">
@@ -189,26 +188,12 @@
     <Compile Include="Loginpage.aspx.designer.cs">
       <DependentUpon>Loginpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="meal.aspx.cs">
-      <DependentUpon>meal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="meal.aspx.designer.cs">
-      <DependentUpon>meal.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MealPage.aspx.cs">
       <DependentUpon>MealPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MealPage.aspx.designer.cs">
       <DependentUpon>MealPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="menu.aspx.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="menu.aspx.designer.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuDataAccessLayer.cs" />
     <Compile Include="OrderManagement.aspx.cs">
@@ -246,8 +231,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50230</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/BcRMS</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

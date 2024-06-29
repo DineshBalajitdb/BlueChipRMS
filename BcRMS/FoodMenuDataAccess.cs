@@ -25,8 +25,10 @@ namespace BcRMS
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
-                SqlCommand cmd = new SqlCommand("spGetFoodMenuByCategoryId", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("spGetFoodMenuByCategoryId", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 SqlParameter Parameter = new SqlParameter("@CategoryId", CategoryId);
                 cmd.Parameters.Add(Parameter);
                 con.Open();
