@@ -7,7 +7,7 @@
     <title>Restaurant Management System</title>
     <link rel="stylesheet" type="text/css" href="~/Css/Demomenu.css"/>
     <link rel="stylesheet" type="text/css" href="~/Css/MealPage.css"/>
-    <script src="JScript1.js"></script>
+  
 </head>
 
 <body>
@@ -17,14 +17,14 @@
         <div class="header">
             <asp:Label ID="lblUserId" runat="server" CssClass="username"></asp:Label>
             <asp:LinkButton ID="btnLogout" runat="server" CssClass="logout" 
-                 onclientclick="btnLogout_Click">Logout</asp:LinkButton>
+                 onclick="btnLogout_Click">Logout</asp:LinkButton>
             <h1>Restaurant Management System&nbsp;&nbsp;&nbsp; </h1>
              <div>
-            <%-- <asp:LinkButton ID="lnkChangePassword" runat="server" CssClass="link-button" 
-                OnClientClick="changePassword(); return false;" 
-                onclick="lnkChangePassword_Click">
+             <asp:LinkButton ID="lnkChangePassword" runat="server" CssClass="link-button" 
+                PostBackUrl="~/PassWordReset.aspx">
                 <i class="fas fa-key"></i> Change Password
-            </asp:LinkButton>--%>
+             </asp:LinkButton>
+
              </div>
         </div>
         
@@ -65,62 +65,6 @@
                 </asp:Repeater>
             </ContentTemplate>
         </asp:UpdatePanel>
-
-              <!-- The Modal -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div id="passwordResetContent" style="display:none;">
-                    <h2>Password Reset</h2>
-                    <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label><span class="mandatory">*</span>
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                            ControlToValidate="txtEmail" ErrorMessage="Invalid E-mail Id" ForeColor="Red" 
-                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-                                Font-Bold="True"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="usernamevalidation" runat="server" 
-                            ErrorMessage="Enter the Username" ForeColor="Red" 
-                            ControlToValidate="txtEmail">Enter the Email</asp:RequiredFieldValidator>
-                            <br/>
-                            <br/>
-                        <asp:Label ID="Label2" runat="server" Text="Old Password"></asp:Label><span class="mandatory">*</span>
-                        <asp:TextBox ID="txtoldPassword" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                            ErrorMessage="Enter Old Password" ForeColor="Red" 
-                            ControlToValidate="txtoldPassword">Enter Old Password</asp:RequiredFieldValidator>
-                         <br/>
-                         <br/>
-                        <asp:Label ID="Label3" runat="server" Text="New Password"></asp:Label><span class="mandatory">*</span>
-                        <asp:TextBox ID="txtNewPassword" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                            ErrorMessage="Enter New Password" ForeColor="Red" 
-                            ControlToValidate="txtNewPassword">Enter New Password</asp:RequiredFieldValidator>
-                         <br/>
-                         <br/>
-                        <asp:Label ID="Label4" runat="server" Text="Conform Password"></asp:Label><span class="mandatory">*</span>
-                        <asp:TextBox ID="conformPassword" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                            ErrorMessage="Enter Conform Password" ForeColor="Red" 
-                            ControlToValidate="conformPassword">Enter Conform Password</asp:RequiredFieldValidator>
-                         <br/>
-                         <br/>
-                        <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                            ControlToCompare="txtNewPassword" ControlToValidate="conformPassword" 
-                            ErrorMessage="Password didn't Match" ForeColor="Red">Password didn&#39;t Match</asp:CompareValidator>
-                         <br/>                         
-                         <br/>
-                    <asp:Label ID="lblPhoneNumber" runat="server" Text="Mobile Number:"></asp:Label><span class="mandatory">*</span>
-                    <asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                        ValidationExpression="\d{10}"
-                        ControlToValidate="txtPhoneNumber" ErrorMessage="Invalid Mobile Number" 
-                        ForeColor="Red">Invalid Mobile Number</asp:RegularExpressionValidator>
-                    <br /><br />
-                    <asp:Button ID="btnSendPasswordReset" runat="server" Text="Change" 
-                         onclientclick="btnPasswordReset_Click" />
-                </div>
-            </div>
-        </div>
     </form>
 </body>
 </html>

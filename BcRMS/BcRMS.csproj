@@ -74,7 +74,7 @@
     <Content Include="MealPage.aspx" />
     <Content Include="orderConfiramtion.aspx" />
     <Content Include="OrderSummery.aspx" />
-    <Content Include="PasswordReset.aspx" />
+    <Content Include="PassWordReset.aspx" />
     <Content Include="payment.aspx" />
     <Content Include="Registrationpage.aspx" />
     <Content Include="sources\Bodybackground.png" />
@@ -216,12 +216,12 @@
     <Compile Include="OrderSummery.aspx.designer.cs">
       <DependentUpon>OrderSummery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PasswordReset.aspx.cs">
-      <DependentUpon>PasswordReset.aspx</DependentUpon>
+    <Compile Include="PassWordReset.aspx.cs">
+      <DependentUpon>PassWordReset.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PasswordReset.aspx.designer.cs">
-      <DependentUpon>PasswordReset.aspx</DependentUpon>
+    <Compile Include="PassWordReset.aspx.designer.cs">
+      <DependentUpon>PassWordReset.aspx</DependentUpon>
     </Compile>
     <Compile Include="payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
