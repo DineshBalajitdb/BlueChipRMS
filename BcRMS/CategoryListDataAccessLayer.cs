@@ -23,15 +23,15 @@ namespace BcRMS
             using (SqlConnection con = new SqlConnection(connectionString))
             {
 
-                SqlCommand cmd = new SqlCommand("spGetCategory", con);
+                SqlCommand cmd = new SqlCommand("spGetCategory", con);               
                 con.Open();
+            
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
                     while (rdr.Read())
                     {
 
-                        FoodMenuCategory FoodMenuCategory = new FoodMenuCategory();
-
+                        FoodMenuCategory FoodMenuCategory = new FoodMenuCategory();                                             
                         FoodMenuCategory.CategoryId = Convert.ToInt32(rdr["CategoryId"]);
                         FoodMenuCategory.CategoryName = rdr["CategoryName"].ToString();
 

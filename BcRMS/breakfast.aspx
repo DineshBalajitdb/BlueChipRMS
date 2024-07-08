@@ -58,7 +58,7 @@
 <h1>Breakfast Menu</h1>
 </div>
 <div class="menu">
-<a href="menu.aspx">Back</a>
+<a href="AlterMenu.aspx">Back</a>
 <a href="meal.aspx">Meal</a>
 <a href="drinks.aspx">Drinks</a>
 <a href="cart.aspx">Cart</a>
@@ -75,8 +75,8 @@
 </tr>
 <tr>
 <td>idli</td>
-<td><img src="sources/FoodItem/BreakFast/idli.jpg" alt="idli" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/BreakFast/idli.jpg');" /></td>
+<td><img src="..\sources\FoodItem\BreakFast\idli.jpg" alt="idli" 
+                        style="width: 100px; height: 75px; background-image: url('pics/idli.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtidliQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtidliQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -89,8 +89,8 @@
 </tr>
 <tr>
 <td>dosa</td>
-<td><img src="sources/FoodItem/BreakFast/dosa.jpg" alt="dosa" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/BreakFast/dosa.jpg');" /></td>
+<td><img src="..\sources\FoodItem\BreakFast\dosa.jpg" alt="dosa" 
+                        style="width: 100px; height: 75px; background-image: url('pics/dosa.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtdosaQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtdosaQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -103,8 +103,8 @@
 </tr>
 <tr>
 <td>puri</td>
-<td><img src="sources/FoodItem/BreakFast/puri.jpg" alt="puri" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/BreakFast/puri.jpg');" /></td>
+<td><img src="..\sources\FoodItem\BreakFast\puri.jpg" alt="puri" 
+                        style="width: 100px; height: 75px; background-image: url('pics/puri.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtpuriQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtpuriQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -117,8 +117,8 @@
 </tr>
 <tr>
 <td class="style1">tea</td>
-<td class="style1"><img src="sources/FoodItem/BreakFast/tea.jpg" alt="tea" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/BreakFast/tea.jpg');" /></td>
+<td class="style1"><img src="..\sources\FoodItem\BreakFast\tea.jpg" alt="tea" 
+                        style="width: 100px; height: 75px; background-image: url('pics/tea.jpg');" /></td>
 <td class="style1">
 <asp:TextBox ID="txtteaQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtteaQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>

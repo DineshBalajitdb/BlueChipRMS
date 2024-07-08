@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BcRMS
 {
-    public partial class drinks : System.Web.UI.Page
+    public partial class meal : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,15 +16,15 @@ namespace BcRMS
                 SetInitialPrices();
             }
         }
-
+ 
         private void SetInitialPrices()
         {
-            txtLassiPrice.Text = "40";
-            txtLimbuPrice.Text = "20";
-            txtFaludaPrice.Text = "80";
-            txtChocoPrice.Text = "50";
+            txtBiriyaniPrice.Text = "150";
+            txtPanjabiPrice.Text = "250";
+            txtNorthPrice.Text = "200";
+            txtSouthPrice.Text = "180";
         }
-
+ 
         protected void UpdatePrice(TextBox quantityTextBox, TextBox priceTextBox, int unitPrice)
         {
             int quantity;
@@ -39,25 +39,25 @@ namespace BcRMS
                 priceTextBox.Text = unitPrice.ToString();
             }
         }
-
+ 
         protected void HandleOrder(TextBox quantityTextBox, TextBox priceTextBox, string itemName)
         {
             int quantity;
             int totalPrice;
             if (int.TryParse(quantityTextBox.Text, out quantity) && int.TryParse(priceTextBox.Text, out totalPrice))
             {
-                // Store order details in session
+                // Store order details in session (you can use a database or other storage as well)
                 List<OrderItem> cartItems = Session["CartItems"] as List<OrderItem>;
-
+ 
                 if (cartItems == null)
                 {
                     cartItems = new List<OrderItem>();
                 }
-
+ 
                 cartItems.Add(new OrderItem { Item = itemName, Quantity = quantity, TotalPrice = totalPrice });
                 Session["CartItems"] = cartItems;
-
-                // Redirect to cart page after adding item
+ 
+                // Optionally, redirect to cart page after adding item
                 Response.Redirect("cart.aspx");
             }
             else
@@ -65,45 +65,47 @@ namespace BcRMS
                 // Handle invalid input
             }
         }
-
-        protected void txtLassiQty_TextChanged(object sender, EventArgs e)
+       
+ 
+        protected void txtBiriyaniQty_TextChanged(object sender, EventArgs e)
         {
-            UpdatePrice(txtLassiQty, txtLassiPrice, 40);
+            UpdatePrice(txtBiriyaniQty, txtBiriyaniPrice, 150);
         }
-
-        protected void btnLassi_Click(object sender, EventArgs e)
+ 
+        protected void btnBiryani_Click(object sender, EventArgs e)
         {
-            HandleOrder(txtLassiQty, txtLassiPrice, "Lassi");
+            HandleOrder(txtBiriyaniQty, txtBiriyaniPrice, "Biryani");
         }
-
-        protected void txtLimbuQty_TextChanged(object sender, EventArgs e)
+ 
+        protected void txtPanjabiQty_TextChanged(object sender, EventArgs e)
         {
-            UpdatePrice(txtLimbuQty, txtLimbuPrice, 20);
+            UpdatePrice(txtPanjabiQty, txtPanjabiPrice, 250);
         }
-
-        protected void btnLimbu_Click(object sender, EventArgs e)
+ 
+        protected void btnPanjabi_Click(object sender, EventArgs e)
         {
-            HandleOrder(txtLimbuQty, txtLimbuPrice, "Limbu");
+            HandleOrder(txtPanjabiQty, txtPanjabiPrice, "Panjabi");
         }
-
-        protected void txtFaludaQty_TextChanged(object sender, EventArgs e)
+ 
+        protected void txtNorthQty_TextChanged(object sender, EventArgs e)
         {
-            UpdatePrice(txtFaludaQty, txtFaludaPrice, 80);
+            UpdatePrice(txtNorthQty, txtNorthPrice, 200);
         }
-
-        protected void btnFaluda_Click(object sender, EventArgs e)
+ 
+        protected void btnNorth_Click(object sender, EventArgs e)
         {
-            HandleOrder(txtFaludaQty, txtFaludaPrice, "Faluda");
+            HandleOrder(txtNorthQty, txtNorthPrice, "North");
         }
-
-        protected void txtChocoQty_TextChanged(object sender, EventArgs e)
+ 
+        protected void txtSouthQty_TextChanged(object sender, EventArgs e)
         {
-            UpdatePrice(txtChocoQty, txtChocoPrice, 50);
+            UpdatePrice(txtSouthQty, txtSouthPrice, 180);
         }
-
-        protected void btnChoco_Click(object sender, EventArgs e)
+ 
+        protected void btnSouth_Click(object sender, EventArgs e)
         {
-            HandleOrder(txtChocoQty, txtChocoPrice, "Choco");
+            HandleOrder(txtSouthQty, txtSouthPrice, "South");
         }
     }
 }
+

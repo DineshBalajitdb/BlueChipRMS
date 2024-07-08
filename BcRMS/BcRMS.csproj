@@ -51,25 +51,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="AlterMenu.aspx" />
     <Content Include="breakfast.aspx" />
-    <Content Include="BreakFastpage.aspx" />
-    <Content Include="CartPage.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Css\Cart.css" />
     <Content Include="Css\Demomenu.css" />
     <Content Include="Css\Loginpage.css" />
+    <Content Include="Css\MealPage.css" />
     <Content Include="Css\Registrationpage.css" />
+    <Content Include="Css\StyleSheet1.css" />
     <Content Include="demomenu.aspx" />
-    <Content Include="DrinkPage.aspx" />
     <Content Include="drinks.aspx" />
-    <Content Include="FMAlterItem.aspx" />
     <Content Include="FoodManagement.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
     <Content Include="Css\HomePage.css" />
     <Content Include="FMInsertFoodItems.aspx" />
+    <Content Include="JScript1.js" />
     <Content Include="Loginpage.aspx" />
     <Content Include="Css\MasterPage.css" />
+    <Content Include="meal.aspx" />
     <Content Include="MealPage.aspx" />
-    <Content Include="OrderManagement.aspx" />
+    <Content Include="orderConfiramtion.aspx" />
+    <Content Include="OrderSummery.aspx" />
+    <Content Include="PasswordReset.aspx" />
+    <Content Include="payment.aspx" />
     <Content Include="Registrationpage.aspx" />
     <Content Include="sources\Bodybackground.png" />
     <Content Include="FMViewItem.aspx" />
@@ -93,7 +99,10 @@
     <Content Include="sources\FoodItem\Meals\punjabi.jpg" />
     <Content Include="sources\FoodItem\Meals\south.jpg" />
     <Content Include="sources\insert-picture-icon.png" />
-    <Content Include="Web.config" />
+    <Content Include="sources\shared image %281%29.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -109,6 +118,13 @@
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlterMenu.aspx.cs">
+      <DependentUpon>AlterMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterMenu.aspx.designer.cs">
+      <DependentUpon>AlterMenu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="breakfast.aspx.cs">
       <DependentUpon>breakfast.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,19 +132,12 @@
     <Compile Include="breakfast.aspx.designer.cs">
       <DependentUpon>breakfast.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BreakFastpage.aspx.cs">
-      <DependentUpon>BreakFastpage.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BreakFastpage.aspx.designer.cs">
-      <DependentUpon>BreakFastpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CartPage.aspx.cs">
-      <DependentUpon>CartPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CartPage.aspx.designer.cs">
-      <DependentUpon>CartPage.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="CategoryListDataAccessLayer.cs" />
     <Compile Include="demomenu.aspx.cs">
@@ -138,26 +147,12 @@
     <Compile Include="demomenu.aspx.designer.cs">
       <DependentUpon>demomenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DrinkPage.aspx.cs">
-      <DependentUpon>DrinkPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DrinkPage.aspx.designer.cs">
-      <DependentUpon>DrinkPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="drinks.aspx.cs">
       <DependentUpon>drinks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="drinks.aspx.designer.cs">
       <DependentUpon>drinks.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FMAlterItem.aspx.cs">
-      <DependentUpon>FMAlterItem.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FMAlterItem.aspx.designer.cs">
-      <DependentUpon>FMAlterItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="FoodManagement.aspx.cs">
       <DependentUpon>FoodManagement.aspx</DependentUpon>
@@ -167,6 +162,9 @@
       <DependentUpon>FoodManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="FoodMenuDataAccess.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,6 +186,13 @@
     <Compile Include="Loginpage.aspx.designer.cs">
       <DependentUpon>Loginpage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="meal.aspx.cs">
+      <DependentUpon>meal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="meal.aspx.designer.cs">
+      <DependentUpon>meal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MealPage.aspx.cs">
       <DependentUpon>MealPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,12 +201,34 @@
       <DependentUpon>MealPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuDataAccessLayer.cs" />
-    <Compile Include="OrderManagement.aspx.cs">
-      <DependentUpon>OrderManagement.aspx</DependentUpon>
+    <Compile Include="orderConfiramtion.aspx.cs">
+      <DependentUpon>orderConfiramtion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderManagement.aspx.designer.cs">
-      <DependentUpon>OrderManagement.aspx</DependentUpon>
+    <Compile Include="orderConfiramtion.aspx.designer.cs">
+      <DependentUpon>orderConfiramtion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem.cs" />
+    <Compile Include="OrderSummery.aspx.cs">
+      <DependentUpon>OrderSummery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSummery.aspx.designer.cs">
+      <DependentUpon>OrderSummery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReset.aspx.cs">
+      <DependentUpon>PasswordReset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReset.aspx.designer.cs">
+      <DependentUpon>PasswordReset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrationpage.aspx.cs">

@@ -85,7 +85,6 @@ namespace BcRMS
 
                         menuItem = new MenuItem();
                         menuItem.FoodItemID = Convert.ToInt32(rdr["FoodItemID"]);
-                        menuItem.CategoryName = rdr["CategoryName"].ToString();
                         menuItem.ItemName = rdr["ItemName"].ToString();
                         menuItem.Price = Convert.ToDecimal(rdr["Price"]);
                         menuItem.ImageData = (byte[])rdr["ImageData"];
@@ -100,6 +99,7 @@ namespace BcRMS
                        
                     }
                 }
+                con.Close();
                 return menuItem;
             }
         }

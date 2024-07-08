@@ -54,7 +54,7 @@
 <h1>Drinks menu</h1>
 </div>
 <div class="menu">
-<a href="menu.aspx">Back</a>
+<a href="AlterMenu.aspx">Back</a>
 <a href="breakfast.aspx">Breakfast</a>
 <a href="meal.aspx">Meal</a>
 <a href="cart.aspx">Cart</a>
@@ -70,8 +70,8 @@
 </tr>
 <tr>
 <td>Lassi</td>
-<td><img src="sources/FoodItem/Drinks/lassi.jpg" alt="Lassi" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/Drinks/lassi.jpg');" /></td>
+<td><img src="..\sources\FoodItem\Drinks\lassi.jpg" alt="Lassi" 
+                        style="width: 100px; height: 75px; background-image: url('pics/lassi.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtLassiQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtLassiQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -80,13 +80,14 @@
 </td>
 <td>
 <asp:Button ID="btnLassi" runat="server" Text="Order Now" 
-                        OnClick="btnLassi_Click" CssClass="button" PostBackUrl="cart.aspx" />
+                        OnClick="btnLassi_Click" CssClass="button" />
+<%--PostBackUrl="cart.aspx"--%>
 </td>
 </tr>
 <tr>
 <td>Limbu Soda</td>
-<td><img src="sources/FoodItem/Drinks/Limbu.jpg" alt="Limbu" 
-                        style="border-color: #000000; width: 100px; height: 75px; background-image: url('sources/FoodItem/Drinks/Limbu.jpg');" /></td>
+<td><img src="..\sources\FoodItem\Drinks\Limbu.jpg" alt="Limbu" 
+                        style="border-color: #000000; width: 100px; height: 75px; background-image: url('pics/Limbu.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtLimbuQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtLimbuQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -95,13 +96,14 @@
 </td>
 <td>
 <asp:Button ID="btnLimbu" runat="server" Text="Order Now" 
-                        OnClick="btnLimbu_Click" CssClass="button" PostBackUrl="cart.aspx" />
+                        OnClick="btnLimbu_Click" CssClass="button"  />
+<%--    PostBackUrl="cart.aspx"--%>
 </td>
 </tr>
 <tr>
 <td>Faluda</td>
-<td><img src="sources/FoodItem/Drinks/faluda.jpg" alt="Faluda" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/Drinks/faluda.jpg');" /></td>
+<td><img src="..\sources\FoodItem\Drinks\faluda.jpg" alt="Faluda" 
+                        style="width: 100px; height: 75px; background-image: url('pics/faluda.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtFaludaQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtFaludaQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -110,13 +112,14 @@
 </td>
 <td>
 <asp:Button ID="btnFaluda" runat="server" Text="Order Now" 
-                        OnClick="btnFaluda_Click" CssClass="button" PostBackUrl="cart.aspx" />
+                        OnClick="btnFaluda_Click" CssClass="button"  />
+<%--     PostBackUrl="cart.aspx"--%>
 </td>
 </tr>
 <tr>
 <td>Choco Milkshek</td>
-<td><img src="sources/FoodItem/Drinks/choc.jpg" alt="Choco" 
-                        style="width: 100px; height: 75px; background-image: url('sources/FoodItem/Drinks/choc.jpg');" /></td>
+<td><img src="..\sources\FoodItem\Drinks\choc.jpg" alt="Choco" 
+                        style="width: 100px; height: 75px; background-image: url('pics/choc.jpg');" /></td>
 <td>
 <asp:TextBox ID="txtChocoQty" runat="server" TextMode="Number" min="1" Text="1" OnTextChanged="txtChocoQty_TextChanged" AutoPostBack="true"></asp:TextBox>
 </td>
@@ -125,7 +128,8 @@
 </td>
 <td>
 <asp:Button ID="btnChoco" runat="server" Text="Order Now" 
-                        OnClick="btnChoco_Click" CssClass="button" PostBackUrl="cart.aspx" />
+                        OnClick="btnChoco_Click" CssClass="button" />
+<%-- PostBackUrl="cart.aspx"--%>
 </td>
 </tr>
 </table>

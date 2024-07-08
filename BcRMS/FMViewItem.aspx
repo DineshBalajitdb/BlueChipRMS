@@ -1,4 +1,4 @@
-﻿<%@ Page Culture="en-IN"  Language="C#" AutoEventWireup="true" CodeBehind="FMViewItem.aspx.cs" Inherits="BcRMS.ViewIteam" %>
+﻿﻿<%@ Page Culture="en-IN"  Language="C#" AutoEventWireup="true" CodeBehind="FMViewItem.aspx.cs" Inherits="BcRMS.ViewIteam" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -43,7 +43,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
        <div class ="select "style="margin-left: 280px">        
-            &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
+           &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" 
             DataSourceID="ObjectDataSource1" DataTextField="CategoryName" 
             DataValueField="CategoryId">
             </asp:DropDownList>

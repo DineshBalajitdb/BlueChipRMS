@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Security.Cryptography;
+using System.Configuration;
 
 namespace BcRMS
 {
@@ -24,17 +25,13 @@ namespace BcRMS
         {
             
                 // Get the form values
-                string userName = TextBox6.Text;
-                string password = TextBox7.Text;
-                string mobilenumber = TextBox4.Text;                
-
-
-                // Hash the password
-                string passwordHash = ComputeSha256Hash(password);
+                string userName = TextBox6.Text.Trim();
+                string password = TextBox7.Text.Trim();
+                string mobilenumber = TextBox4.Text.Trim();                
 
                 // Save the user data to the database
                 string errorMessage;
-                bool success = SaveUser(userName, passwordHash, mobilenumber,out errorMessage);
+                bool success = SaveUser(userName, password, mobilenumber, out errorMessage);
 
                 if (success)
                 {
@@ -76,10 +73,10 @@ namespace BcRMS
 
         private bool SaveUser(string userName, string passwordHash, string mobilenumber,out string errorMessage)
         {
-            string connectionString = @"Data Source=BC-SL2024A\MSSQLSERVER1;Initial Catalog=RMS;Integrated Security=True";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             errorMessage = string.Empty;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 try
                 {

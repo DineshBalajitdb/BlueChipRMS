@@ -13,7 +13,7 @@
     <h2>User Registration Form</h2>
     <div>
                 <br />
-    <asp:Label ID="Label6" runat="server" Text="UserName"></asp:Label>
+    <asp:Label ID="Label6" runat="server" Text="UserName"></asp:Label><span class="mandatory">*</span>
     <asp:TextBox ID="TextBox6" runat="server" ></asp:TextBox>
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
         ControlToValidate="TextBox6" ErrorMessage="Invalid E-mail Id" ForeColor="Red" 
@@ -26,7 +26,7 @@
     </div>
     <div>
   
-        <asp:Label ID="Label7" runat="server" Text="Password"></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text="Password"></asp:Label><span class="mandatory">*</span>
         <asp:TextBox ID="TextBox7" runat="server" 
          TextMode="Password"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -34,7 +34,7 @@
     <br />
     </div>
     <div>
-    <asp:Label ID="Label8" runat="server" Text="Confirm Password"></asp:Label>
+    <asp:Label ID="Label8" runat="server" Text="Confirm Password"></asp:Label><span class="mandatory">*</span>
     <asp:TextBox ID="TextBox8" runat="server" 
         TextMode="Password"></asp:TextBox>
      <br/>
@@ -46,7 +46,7 @@
     </div>
     <div  class ="Registerbutton "style="height: 169px">
         <br />
-        <asp:Label ID="Label4" runat="server" Text="Phone Number"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Text="Phone Number"></asp:Label><span class="mandatory">*</span>
         <asp:TextBox ID="TextBox4" runat="server" TextMode="Phone"></asp:TextBox>
 
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 

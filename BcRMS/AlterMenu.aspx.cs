@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BcRMS
 {
-    public partial class OrderManagement : System.Web.UI.Page
+    public partial class AlterMenu : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

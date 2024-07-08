@@ -4,6 +4,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Data.SqlClient;
 using System.Web;
+using System.Configuration;
 
 namespace BcRMS
 {
@@ -21,8 +22,8 @@ namespace BcRMS
 
         private bool ItemExists(int categoryId, string itemName)
         {
-            string connectionString = @"Data Source=BC-SL2024A\MSSQLSERVER1;Initial Catalog=RMS;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection(connectionString))
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 string query = "SELECT COUNT(*) FROM tbl_FoodMenus WHERE CategoryId = @CategoryId AND ItemName = @ItemName";
                 using (SqlCommand cmd = new SqlCommand(query, con))

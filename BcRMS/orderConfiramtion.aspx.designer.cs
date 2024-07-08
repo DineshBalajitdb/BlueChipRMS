@@ -10,7 +10,7 @@
 namespace BcRMS {
     
     
-    public partial class DrinkPage {
+    public partial class orderConfiramtion {
         
         /// <summary>
         /// Head1 control.
@@ -31,21 +31,21 @@ namespace BcRMS {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Repeater1 control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// btnProceedToPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.Button btnProceedToPayment;
     }
 }

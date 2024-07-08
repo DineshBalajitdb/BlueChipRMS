@@ -13,7 +13,7 @@
         </div>
         <div class="menu">
             <a href="FoodManagement.aspx">Food Management</a>
-            <a href="OrderManagement.aspx">Order Management</a>
+           <%-- <a href="OrderManagement.aspx">Order Management</a>--%>
             <a href="HomePage.aspx">Home Page</a>
         </div>
         <div class="content">

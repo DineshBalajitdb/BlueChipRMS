@@ -42,12 +42,6 @@
                         <asp:BoundField DataField="ItemName" HeaderText="ItemName" 
                             SortExpression="ItemName" />
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}" />
-                        <%--<asp:TemplateField HeaderText="Image">
-                            <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server"  Height="100px" Width="106px" ImageAlign="Middle"
-                                    ImageUrl='<%# Eval("ImageDataBase64") %>' />
-                            </ItemTemplate>
-                        </asp:TemplateField>--%>
                     </Columns>
                     <EditRowStyle HorizontalAlign="Center" />
                     <FooterStyle BackColor="Tan" />
@@ -182,45 +176,3 @@
 </body>
  
 </html>
-
-         <%--<div>        
-        <asp:Panel ID="CancelImgButton" runat="server" Height="241px" Font-Bold="False" 
-            HorizontalAlign="Left" Width="1038px">
-            <br />
-            <asp:Label ID="lblCategory" runat="server" Text="Category" Font-Bold="True" 
-                Height="20px" Width="90px"></asp:Label>
-            <asp:DropDownList ID="ddlCategoryList" runat="server" Font-Bold="True" 
-                Font-Size="Small" Height="20px" Width="90px">
-                <asp:ListItem Selected="True" Value="0">Select</asp:ListItem>
-                <asp:ListItem Value="1001">Break Fast</asp:ListItem>
-                <asp:ListItem Value="1002">Meal</asp:ListItem>
-                <asp:ListItem Value="1003">Drinks</asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:Label ID="lblImage" runat="server" Font-Bold="True" Height="20px" 
-                Text="Image" Width="90px"></asp:Label>
-            <asp:FileUpload ID="ImageFileUpload" runat="server" Font-Bold="False" 
-                Height="25px" />
-            <br />
-            <asp:Label ID="lblItem" runat="server" Font-Bold="True" Height="20px" 
-                Text="Item Name" Width="90px"></asp:Label>
-            <asp:TextBox ID="ItemTxt" runat="server" Height="20px" 
-                Width="160px"></asp:TextBox>
-            <br />
-            <asp:Label ID="lblPrice" runat="server" Font-Bold="True" Height="20px" 
-                Text="Price" Width="90px"></asp:Label>
-            <asp:TextBox ID="PriceTxt" runat="server" TextMode="Number" Width="161px"></asp:TextBox>
-            <br />
-            <asp:ImageButton ID="InsertImgButton" runat="server" Height="55px" 
-                ImageAlign="AbsBottom" ImageUrl="~/sources/insert-picture-icon.png" 
-                onclick="InsertImgButton_Click" Width="62px"/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:ImageButton ID="cancelImagebutton" runat="server" Height="60px" 
-                ImageAlign="AbsBottom" ImageUrl="~/sources/cancel.png" 
-                onclick="CancelImgButton_Click"/>
-            <br />
-            <br />
-            <asp:Label ID="lberror" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-        </asp:Panel>
-        </div>--%>
